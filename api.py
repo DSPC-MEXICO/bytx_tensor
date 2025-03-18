@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 import numpy as np
 import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Desactiva GPU
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"  # Evita errores de redondeo
+import tensorflow as tf
 
 app = Flask(__name__)
 
